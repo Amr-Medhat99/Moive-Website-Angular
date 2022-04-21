@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngIf="isLoading==true" class="row" style="margin-top: 80px;">
+        <div class="col-md-9" id="moive">
+            <img class="w-100" [src]="imageURL+movieDetails.backdrop_path" alt="movieImage">
+            <h1 class="p-3">{{movieDetails.title}}</h1>
+            <p class="lead">{{movieDetails.overview}}</p>
+        </div>
+        <div class="col-md-3">
+            <div *ngFor="let x of topTenMovies">
+                <img class="w-75" [src]="imageURL+x.poster_path" alt="movieImage">
+                <h6 style="font-size: 20px;">{{x.title}}</h6>
+            </div>
+        </div>
+    </div>
+</div>

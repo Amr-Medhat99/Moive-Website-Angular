@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4" style="display: flex;align-items: center;">
+            <h1>Trending Movies <br> Right Now</h1>
+        </div>
+        <div *ngFor='let x of moiveData' class="col-md-2 my-5" style="position: relative;">
+            <a style="text-decoration: none; color: white;" [routerLink]="['/moviedetails',x.id]">
+                <img [src]="imageURL+x.poster_path" alt="image" class="h-100 w-100">
+                <h6>{{x.title}}</h6>
+                <span style="color: red; position: absolute; top: 0px;right: 10%; color: white; background-color: #09c;padding: 10px;">{{x.vote_average}}</span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container" *ngIf="isLoading==true">
+    <div class="row" style="margin-top: 80px;">
+        <div class="col-md-4">
+            <img class="w-100 h-100" [src]="imageURL+personData.profile_path" alt="personImage">
+        </div>
+        <div class="col-md-8">
+            <div class="p-3">
+                <h1>{{personData.name}}</h1>
+                <p><span style="color: red;font-size: 20px;">Category:</span>{{personData.known_for_department}}</p>
+                <p><span style="color: red;">biography: </span> {{personData.biography}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5" style="height: 5px;width: 100%; background-color: red;"></div>
+
+    <h1 class="text-center mt-5">popular Work</h1>
+    
+    <div class="row my-5" *ngIf="personIDAndWorks!=undefined">
+        <div *ngFor="let x of personIDAndWorks" class="col-md-4" style="position: relative;">
+            <a [routerLink]="['/moviedetails',x.id]" style="color: white;text-decoration:none;">
+                <img class="w-100" [src]="imageURL+x.backdrop_path" alt="image">
+                <h4 class="p-3">{{x.title}}</h4>
+                <span style="position: absolute; top: 0px;right: 6%; color: white; background-color: #09c;padding: 10px;">{{x.vote_average}}</span>
+            </a>
+        </div>
+    </div>
+</div>

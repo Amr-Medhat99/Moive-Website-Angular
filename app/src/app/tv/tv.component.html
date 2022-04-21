@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" style="margin-top: 80px;" *ngIf="isLoading==true">
+        <div *ngFor="let x of tvData.results" class="col-md-3">
+            <a [routerLink]="['/tvdetails',x.id]" style="text-decoration: none; color: white;">
+                <div style="position: relative;">
+                    <img class="w-100" [src]="imageURL+x.poster_path" alt="TV Image">
+                    <h4 class="p-2">{{x.name}}</h4>
+                    <p style="background-color: #09c;color: white;  position: absolute;top:0px;right: 5%;padding: 10px;">{{x.vote_average}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

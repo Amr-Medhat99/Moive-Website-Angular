@@ -1,0 +1,26 @@
+
+<nav class="bg-light p-1" style="position: fixed;z-index: 1000;top: 0px;width: 100%;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <ul class="list-unstyled">
+          <li><a style="text-decoration: none; color: black;" routerLink="movie" routerLinkActive="active">Logo</a></li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <ul *ngIf="isFill==true" class="list-unstyled d-flex" style="justify-content: space-evenly;">
+          <li><a style="text-decoration: none; color: black;" routerLink="movie" routerLinkActive="active">Movie</a></li>
+          <li><a style="text-decoration: none; color: black;" routerLink="tv" routerLinkActive="active">TV</a></li>
+          <li><a style="text-decoration: none; color: black;" routerLink="person" routerLinkActive="active">Person</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <ul class="list-unstyled d-flex justify-content-around">
+          <li><a *ngIf="isFill==false" style="text-decoration: none; color: black;" routerLink="login" routerLinkActive="active">SignIn</a></li>
+          <li><a *ngIf="isFill==false" style="text-decoration: none; color: black;" routerLink="register" routerLinkActive="active">Register</a></li>
+          <li><a *ngIf="isFill==true" style="text-decoration: none; color: black;" routerLinkActive="active"><button (click)="sinOut()">SignOut</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

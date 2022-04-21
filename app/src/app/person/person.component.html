@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row" style="margin-top: 80px;">
+        <div *ngFor="let x of personData" class="col-md-4">
+            <a [routerLink]="['/persondetails',x.id]" style="color: white;text-decoration:none">
+                <div>
+                    <img class="w-100" [src]="imageURL+x.profile_path" alt="personImage">
+                    <h4 class="p-2">{{x.name}}</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

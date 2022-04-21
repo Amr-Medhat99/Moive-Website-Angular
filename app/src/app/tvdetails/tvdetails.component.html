@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row" style="margin-top: 80px;" *ngIf="isLoading==true">
+        <div class="col-md-9">
+            <div>
+                <img class="w-100" [src]="imageURL+tvDetails.backdrop_path">
+                <h1>{{tvDetails.name}}</h1>
+                <p>{{tvDetails.overview}}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div *ngFor="let x of trendTv">
+                <img class="w-100" [src]="imageURL+x.poster_path" alt="">
+                <h5>{{x.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
